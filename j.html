@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<!-- External CSS links -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap-grid.min.css" integrity="sha512-ZuRTqfQ3jNAKvJskDAU/hxbX1w25g41bANOVd1Co6GahIe2XjM6uVZ9dh0Nt3KFCOA061amfF2VeL60aJXdwwQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="index.css">
+<!-- Inline Styles -->
+<style>
+    /*web card start*/
+.web {
+ width: 550px;
+ height: 307px;
+ border-radius: 20px;
+ background: #f5f5f5;
+ position: relative;
+ padding: 1px;
+ border: 2px solid #1c1c1d;
+ transition: 0.5s ease-out;
+ background-size: cover;
+}
+
+
+.card-button {
+ transform: translate(-50%, 125%);
+ width: 60%;
+ border-radius: 1rem;
+ border: none;
+ background-color: #c22020;
+ color: #fff;
+ font-size: 1rem;
+ padding: .5rem 1rem;
+ position: absolute;
+ left: 50%;
+ bottom: 0;
+ opacity: 0;
+ transition: 0.3s ease-out;
+}
+
+/*Hover*/
+.web:hover {
+ border-color: #c22020;
+ box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.web:hover .card-button {
+ transform: translate(-50%, 50%);
+ opacity: 1;
+}
+/*web card end*/
+
+/*mobile card start*/
+.mobile {
+ width: 290px;
+ height: 627px;
+ border-radius: 20px;
+ background: #f5f5f5;
+ position: relative;
+ padding: 1px;
+ border: 2px solid #1c1c1d;
+ transition: 0.5s ease-out;
+ background-size: cover;
+}
+
+
+.card-button {
+ transform: translate(-50%, 125%);
+ width: 60%;
+ border-radius: 1rem;
+ border: none;
+ background-color: #c22020;
+ color: #fff;
+ font-size: 1rem;
+ padding: .5rem 1rem;
+ position: absolute;
+ left: 50%;
+ bottom: 0;
+ opacity: 0;
+ transition: 0.3s ease-out;
+}
+
+/*Hover*/
+.mobile:hover {
+ border-color: #c22020;
+ box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.mobile:hover .card-button {
+ transform: translate(-50%, 50%);
+ opacity: 1;
+}
+/*mobile card end*/
+
+/*photo card start*/
+.photo {
+ width: 271px;
+ height: 383px;
+ border-radius: 20px;
+ background: #f5f5f5;
+ position: relative;
+ padding: 1px;
+ border: 2px solid #1c1c1d;
+ transition: 0.5s ease-out;
+ background-size: cover;
+}
+
+
+.card-button {
+ transform: translate(-50%, 125%);
+ width: 60%;
+ border-radius: 1rem;
+ border: none;
+ background-color: #c22020;
+ color: #fff;
+ font-size: 1rem;
+ padding: .5rem 1rem;
+ position: absolute;
+ left: 50%;
+ bottom: 0;
+ opacity: 0;
+ transition: 0.3s ease-out;
+}
+
+/*Hover*/
+.photo:hover {
+ border-color: #c22020;
+ box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.photo:hover .card-button {
+ transform: translate(-50%, 50%);
+ opacity: 1;
+}
+/*photo card end*/
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999; /* Ensure popup is above other content */
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+    /* Style the tab */
+.tab {
+  overflow: hidden;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 60px;
+  padding: 15px 32px;
+  text-align: center;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background: #842727;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+  border-radius: 20px;
+  height: 40px;
+  width: 200px;
+  color:#fff;
+  margin: 0 5px;
+  text-align: center;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #c22020;
+  border: 1px solid #200e0e;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #c22020;
+  border: 1px solid #200e0e;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 20px;
+  margin-top: 20px;
+}
+    .port h3 span{
+        color: #c22020;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+    }
+    .port h1 span{
+        color: #c22020;
+
+    }
+
+    .sky{
+        justify-content: space-around;
+        flex-wrap: wrap;
+        row-gap: 50px;
+    }
+
+    ::-webkit-scrollbar{
+        width:15px;
+        
+    }
+    ::-webkit-scrollbar-track{
+        background: #ffffff;
+        
+    }
+    ::-webkit-scrollbar-thumb{
+        background: #c32f2f;
+        
+    }
+</style>
+</head>
+<body>
+    <header class="header-area">
+        <!-- site-navbar start -->
+        <div class="navbar-area">
+          <div class="container1">
+            <nav class="site-navbar">
+              <!-- site logo -->
+              <a href="index.html" class="site-logo"><img src="images/logo.png" alt="" height="50px" style="margin-top: 1%;"></a>
+      
+              <!-- site menu/nav -->
+              <ul>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i><span style="padding-left: 9px;">Home</span></a>
+                </li>
+                <li>
+                    <a href="about.html"><i class="fa-solid fa-user"></i><span style="padding-left: 9px;">About</span></a>
+                </li>
+                <li>
+                    <a href="skills.html"><i class="fa-solid fa-file-lines"></i><span style="padding-left: 9px;">Skills</span></a>
+                </li>
+                <li>
+                    <a href="#" style="color: #c22020;"><i class="fa-solid fa-briefcase"></i><span style="padding-left: 9px;">Portfolio</span></a>
+                </li>
+                <li>
+                    <a href="contact.html"><i class="fa-solid fa-address-card"></i><span style="padding-left: 9px;">Contact</span></a>
+                </li>
+              </ul>
+              <div class="cursor"></div>
+              <!-- nav-toggler for mobile version only -->
+              <button class="nav-toggler">
+                <span></span>
+              </button>
+            </nav>
+          </div>
+        </div><!-- navbar-area end -->
+      </header>
+    <br>
+    <div class="port" style="text-align: center;">
+        <h3>PORTFO<span>LIO</span></h3>
+        <h1>MY <span>WORKS</span></h1>
+    </div>
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'ALL')">ALL</button>
+      <button class="tablinks" onclick="openCity(event, 'WEBSITES')">WEBSITES</button>
+      <button class="tablinks" onclick="openCity(event, 'FIGMA DESIGNS')">FIGMA DESIGNS</button>
+      <button class="tablinks" onclick="openCity(event, 'GRAPHIC WORKS')">GRAPHIC WORKS</button>
+    </div>
+
+    <div id="ALL" class="tabcontent">
+        <div class="row container-fluid sky">
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/dashboard2.png'); border-radius: 1rem;">
+                <a href="images/netflix.jpg" data-lightbox="web-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/bgmi1.png'); border-radius: 1rem;">
+                <a href="images/netflix.jpg" data-lightbox="web-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/netflix.jpg'); border-radius: 1rem;">
+                <a href="images/netflix.jpg" data-lightbox="web-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/dashboard2.png'); border-radius: 1rem;">
+                <a href="images/netflix.jpg" data-lightbox="web-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/dashboard2.png'); border-radius: 1rem;">
+                <a href="images/netflix.jpg" data-lightbox="web-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/netflix.jpg'); border-radius: 1rem;">
+                <a href="images/netflix.jpg" data-lightbox="web-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 photo" style="background-image: url('images/football.jpg');border-radius: 1rem; ">
+                <a href="images/football.jpg" data-lightbox="photo-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 photo" style="background-image: url('images/chess.jpg');border-radius: 1rem; ">
+                <a href="images/football.jpg" data-lightbox="photo-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 photo" style="background-image: url('images/player.jpg');border-radius: 1rem; ">
+                <a href="images/football.jpg" data-lightbox="photo-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 photo" style="background-image: url('images/chess.jpg');border-radius: 1rem; ">
+                <a href="images/football.jpg" data-lightbox="photo-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 mobile" style="background-image: url('images/mobile3.png');border-radius: 1rem; ">
+                <a href="images/mobile4.png" data-lightbox="mobile-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="WEBSITES" class="tabcontent">
+        <div class="row container-fluid sky">
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/netflix1.png'); border-radius: 1rem;">
+                <a href="images/netflix.jpg" data-lightbox="web-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/bgmi1.png'); border-radius: 1rem;">
+                <a href="images/bgmi1.png" data-lightbox="web-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/dashboard1.png'); border-radius: 1rem;">
+                <a href="images/dashboard1.png" data-lightbox="web-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/netflix.jpg'); border-radius: 1rem;">
+                <a href="images/netflix.jpg" data-lightbox="web-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/bgmi1.png'); border-radius: 1rem;">
+                <a href="images/bgmi1.png" data-lightbox="web-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/dashboard3.png'); border-radius: 1rem;">
+                <a href="images/dashboard3.png" data-lightbox="web-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="FIGMA DESIGNS" class="tabcontent">
+       <center> <div class="port">
+            <div style="justify-content: center; display: flex;">
+                <h1>Mobile <span>Screens</span></h1>
+            <div style="margin-right: -350px;">
+                <h2>Mobile Screens</h2>
+                <h2>Web Screens</h2>
+            </div>
+            </div>
+        </div>
+    </center>
+    <br><br><br>
+        <div class="row container-fluid sky">
+            <div class="col-lg-6 col-md-4 mobile" style="background-image: url('images/mobile1.png');border-radius: 1rem; ">
+                <a href="images/mobile4.png" data-lightbox="mobile-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 mobile" style="background-image: url('images/mobile2.png');border-radius: 1rem; ">
+                <a href="images/mobile4.png" data-lightbox="mobile-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 mobile" style="background-image: url('images/mobile3.png');border-radius: 1rem; ">
+                <a href="images/mobile4.png" data-lightbox="mobile-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 mobile" style="background-image: url('images/mobile4.png');border-radius: 1rem; ">
+                <a href="images/mobile4.png" data-lightbox="mobile-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 mobile" style="background-image: url('images/mobile5.png');border-radius: 1rem; ">
+                <a href="images/mobile4.png" data-lightbox="mobile-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 mobile" style="background-image: url('images/mobile6.png');border-radius: 1rem; ">
+                <a href="images/mobile4.png" data-lightbox="mobile-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 mobile" style="background-image: url('images/mobile7.png');border-radius: 1rem; ">
+                <a href="images/mobile4.png" data-lightbox="mobile-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 mobile" style="background-image: url('images/mobile8.png');border-radius: 1rem; ">
+                <a href="images/mobile4.png" data-lightbox="mobile-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 mobile" style="background-image: url('images/mobile9.png');border-radius: 1rem; ">
+                <a href="images/mobile4.png" data-lightbox="mobile-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 mobile" style="background-image: url('images/mobile10.png');border-radius: 1rem; ">
+                <a href="images/mobile4.png" data-lightbox="mobile-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 mobile" style="background-image: url('images/mobile11.png');border-radius: 1rem; ">
+                <a href="images/mobile4.png" data-lightbox="mobile-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+        </div>
+        <br><br><br>
+    <center>
+        <div class="port">
+            <h1>Web <span>Screens</span></h1>
+        </div>
+    </center>
+    <br><br><br>
+        <div class="row container-fluid sky">
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/dashboard1.png'); border-radius: 1rem;">
+                <button class="card-button" onclick="openPopup('images/dashboard1.jpg')">Watch Now</button>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/dashboard2.png'); border-radius: 1rem;">
+                <button class="card-button" onclick="openPopup('images/dashboard2.jpg')">Watch Now</button>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/dashboard3.png'); border-radius: 1rem;">
+                <button class="card-button" onclick="openPopup('images/dashboard3.jpg')">Watch Now</button>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/dashboard4.png'); border-radius: 1rem;">
+                <button class="card-button" onclick="openPopup('images/dashboard4.jpg')">Watch Now</button>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/dashboard5.png'); border-radius: 1rem;">
+                <button class="card-button" onclick="openPopup('images/dashboard5.jpg')">Watch Now</button>
+            </div>
+            <div class="col-lg-6 col-md-4 web" mt-lg-0 style="background-image: url('images/dashboard6.png'); border-radius: 1rem;">
+                <button class="card-button" onclick="openPopup('images/dashboard6.jpg')">Watch Now</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="GRAPHIC WORKS" class="tabcontent">
+        <div class="row container-fluid sky">
+            <div class="col-lg-6 col-md-4 photo" style="background-image: url('images/football.jpg');border-radius: 1rem; ">
+                <a href="images/football.jpg" data-lightbox="photo-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 photo" style="background-image: url('images/chess.jpg');border-radius: 1rem; ">
+                <a href="images/football.jpg" data-lightbox="photo-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 photo" style="background-image: url('images/player.jpg');border-radius: 1rem; ">
+                <a href="images/football.jpg" data-lightbox="photo-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-4 photo" style="background-image: url('images/chess.jpg');border-radius: 1rem; ">
+                <a href="images/football.jpg" data-lightbox="photo-image">
+                    <button class="card-button">Watch Now</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+<!-- Popup -->
+<div id="popup" class="popup" onclick="closePopup()">
+    <span class="close">&times;</span>
+    <img id="popup-image" class="popup-content">
+</div>
+
+    <!-- External JavaScript links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-6g1bhDSC9cxJYR08tpvzriw/Z1TpXhG93Ef7xzzMsPn+YJHV2Ho2hftMcyUb3YBvmI8VOnEHLJbI+KqJ6STuZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js" integrity="sha512-EcjQPe6SYb5VBsUGvG5zyfr1ToCFJ7QJbIYiFtl3QCKyntCyHAsA5myOXL35Jt7BgcvCPhdP8XkUM8zyUyakXw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // JavaScript functions for cursor effect
+    const cursor = document.querySelector('.cursor');
+    const interactiveElements = document.querySelectorAll('a, button, .card, .car, .cards, h1, h2, h3, h4, h5');
+
+    interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'scale(3)';
+        });
+
+        element.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        });
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        // Calculate the cursor position relative to the viewport
+        const x = e.clientX;
+        const y = e.clientY;
+
+        // Update the cursor position
+        cursor.style.left = x + 'px';
+        cursor.style.top = y + 'px';
+    });
+
+        // JavaScript functions for popup
+        function openPopup(imageUrl) {
+        document.getElementById("popup-image").src = imageUrl;
+        document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        }
+    </script>
+    <!-- JavaScript to handle tab switching -->
+    <script>
+        // Function to simulate click on default tab content
+        function setDefaultTab() {
+          document.querySelector('.tablinks').click(); // Simulate click on the first tab button
+        }
+      
+        // Call the function when the page finishes loading
+        window.addEventListener('load', setDefaultTab);
+        
+        // Rest of your existing JavaScript code
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+      </script>
+
+    <script>
+        var mixer = mixitup('.portfolio-gallery',{
+        selectors: {
+        target: '.portfolio-box'
+        },
+        animation: {
+        duration: 500
+        }
+        });
+
+
+        //  swiperjs 
+
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            },
+            autoplay:{
+                delay:3000,
+                disableOnInteraction:false,
+            },
+
+            breakpoints: {
+                576:{
+                    slidesPerView:2,
+                    spaceBetween:10,
+                },
+                1200:{
+                    slidesPerView:3,
+                    spaceBetween:20,
+                },
+            }
+        });
+    </script>
+    <script>
+        // Simulate click on the "ALL" button when the page loads
+        window.onload = function() {
+            document.querySelector('.tablinks[data-tab="ALL"]').click();
+        };
+    </script>
+    
+</body>
+</html>
