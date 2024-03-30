@@ -24,6 +24,145 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* Animation Effects start */
+
+.about img{
+  animation: slidez 1s ease-in;
+}
+
+.home-img{
+  animation: slidez 1s ease-in;
+}
+
+@keyframes slidez {
+  0% {
+  transform: scale(0); /* Start with 0 scale */
+  }
+
+  100% {
+  transform: scale(1); /* End with 0 scale */
+  }
+}
+
+.site-navbar ul li,
+.site-navbar a{
+  opacity: 0;
+  animation: slideTo .5s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+
+@keyframes slideTo {
+  0%{
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation Effects For Home Start */
+
+.home-text h2,
+.home-text h1,
+.home-text .scroll,
+.home-text p,
+.home-text .butto,
+.home-text .button2,
+.social a,
+.about-text h2,
+.about-text h2 span,
+.about h5,
+.about h5 span,
+.about p,
+.ab h2,
+.butt,
+.sk h2,
+.sk h2 span,
+.sk h3,
+.sk h3 span,
+.tab button,
+ul li,
+h3,
+p,
+.box .icons,
+h2,
+h2 span{
+  opacity: 0;
+  animation: slideTop2 .5s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+
+@keyframes slideTop2 {
+  0%{
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation Effects For Home End */
+
+/* Animation Effects For Portfolio Start */
+
+.sky{
+    animation: sa .5s ease forwards;
+}
+
+@keyframes sa {
+    0%{
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation Effects For Portfolio End */
+
+/* Animation Effects For Contact Start */
+
+.ri{
+  animation: come .5s ease forwards;
+}
+
+@keyframes come {
+  0%{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+form{
+  animation: form .5s ease forwards;
+}
+
+@keyframes form {
+  0%{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation Effects For Contact End */
+
+/* Animation Effects End */
+
 /* Home Section Styles */
 
 /*header*/
@@ -105,7 +244,7 @@ a {
 /* nav-toggler css start */
 
 /* mobile breakpoint start */
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
   .container1 {
     max-width: 720px;
   }
@@ -145,29 +284,10 @@ a {
     max-height: 100vh;
     overflow: visible;
   }
-  .cursor{
-    display: none;
-  }
 /* navbar css for mobile end */
 }
 /* mobile breakpoint end */
 /*header*/
-
-/* Cursor Styles start*/
-.cursor {
-  position: fixed;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #ffffffd4;
-  pointer-events: none;
-  mix-blend-mode: difference;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  transition: all 0.3s ease-out;
-}
-/* Cursor Styles end */
 
 .write {
   justify-content: space-between;
@@ -293,11 +413,7 @@ h1 span::before {
   }
 }
 /* Media Queries */
-@media only screen and (max-width: 991px) {
-.cursor {
-    width: 10px;
-    height: 10px;
-}
+@media only screen and (min-width: 320px) and (max-width: 769px) {
 
 .home-img img {
   align-items: center;
@@ -326,6 +442,44 @@ h1 span::before {
 }
 }
 
+/* Media Queries */
+@media only screen and (min-width: 320px) and (max-width: 769px) {
+  
+  .home-img img {
+    align-items: center;
+  }
+  .write {
+      gap: 20px;
+  }
+
+  .home-text h1{
+    font-size: 20px;
+  }
+
+  .home-text,
+  .home-img {
+      max-width: 100%;
+      text-align: center;
+  }
+  
+  .btn,
+  .btn.two {
+      margin-right: 0;
+      margin-bottom: 10px;
+  }
+  
+  .button2{
+    width: 35px;
+    height: 35px;
+  }
+
+  .social i {
+      height: 35px;
+      width: 35px;
+      font-size: 16px;
+  }
+  }
+
 @media only screen and (max-width: 576px) {
 .home-text h1 {
     font-size: 26px;
@@ -346,6 +500,45 @@ h1 span::before {
   text-align: center;
 }
 }
+
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+  .home-text h1 {
+      font-size: 34px;
+  }
+  
+  .home-text p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  .btn:hover{
+    transform: translateY(-5px);
+    background: transparent;
+    color: #c22020;
+  }
+  
+  .col-12.social{
+    text-align: center;
+    margin-top: 60px;
+  }
+  .lo{
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: -45px;
+  }
+
+  .lo .button2{
+    width: 180px;
+    height: 40px;
+  }
+
+  .lo .butto{
+    width: 180px;
+    height: 40px;
+  }
+
+  }
 
 /*download*/
 .button2 {
@@ -551,6 +744,8 @@ margin-left: 7px;
 gap: 20px;
 justify-content: center;
 margin-left: -22px;
+display: flex;
+flex-wrap: wrap;
 }
 
 .icon svg {
@@ -575,11 +770,17 @@ padding: 2px 13px;
 padding: 10vh 0;
 background-color: #151212;
 display: flex;
+gap: 40px;
 }
 
 .about img {
 height: auto;
 max-width: 100%;
+}
+
+.about i{
+  color: #c22020;
+  margin-top: 5px;
 }
 
 .about-text .ab h2{
@@ -659,9 +860,38 @@ background-color: transparent;
 border: 2px solid #c22020;
 cursor: pointer;
 }
-@media (max-width: 767px) {
+
+@media (max-width: 1024px) {
+  .about{
+    display: flex;
+    gap: 10px;
+  }
+  .about img {
+    height: auto;
+    max-width: 100%;
+    margin-top: 25%;
+    }
+}
+
+@media (max-width: 1440px) {
+  .about{
+    display: flex;
+    gap: 40px;
+  }
+  .about img {
+    height: auto;
+    max-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Your CSS styles for screens between 601px and 1024px */
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
 /* Adjustments for smaller screens */
 .about {
+  display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 -65px;
@@ -901,7 +1131,36 @@ html, body {
   background-size: cover;
   }
   
+  .web a{
+    overflow: hidden;
+  }
+
+  .span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    background: #0a0000a1;
+    border-radius: 10px;
+    transition: 0.5s ease;
+    opacity: 0;
+  }
   
+  .span h2{
+    color: #ef6969;
+  }
+
+  .web:hover .span{
+    top: 0;
+    opacity: 1;
+  }
+
   .card-button {
   transform: translate(-50%, 125%);
   width: 60%;
@@ -929,90 +1188,6 @@ html, body {
   opacity: 1;
   }
 /*web card end*/
-
-/*mobile card start*/
-  .mobile {
-  width: 219px;
-  height: 475px;
-  border-radius: 10px;
-  background: #f5f5f5;
-  position: relative;
-  padding: 1px;
-  border: 2px solid #1c1c1d;
-  transition: 0.5s ease-out;
-  background-size: cover;
-  }
-  
-  
-  .card-button {
-  transform: translate(-50%, 125%);
-  width: 60%;
-  border-radius: 1rem;
-  border: none;
-  background-color: #c22020;
-  color: #fff;
-  font-size: 1rem;
-  padding: .5rem 1rem;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  opacity: 0;
-  transition: 0.3s ease-out;
-  }
-  
-/*Hover*/
-  .mobile:hover {
-  border-color: #c22020;
-  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-  }
-  
-  .mobile:hover .card-button {
-  transform: translate(-50%, 50%);
-  opacity: 1;
-  }
-/*mobile card end*/
-
-/*photo card start*/
-  .photo {
-  width: 248px;
-  height: 350px;
-  border-radius: 10px;
-  background: #f5f5f5;
-  position: relative;
-  padding: 1px;
-  border: 2px solid #1c1c1d;
-  transition: 0.5s ease-out;
-  background-size: cover;
-  }
-  
-  
-  .card-button {
-  transform: translate(-50%, 125%);
-  width: 50%;
-  border-radius: 20px;
-  border: none;
-  background-color: #c22020;
-  color: #fff;
-  font-size: 14px;
-  padding: 8px 16px;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  opacity: 0;
-  transition: 0.3s ease-out;
-  }
-  
-/*Hover*/
-  .photo:hover {
-  border-color: #c22020;
-  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-  }
-  
-  .photo:hover .card-button {
-  transform: translate(-50%, 50%);
-  opacity: 1;
-  }
-/*photo card end*/
 
 /* Popup styles */
   .popup {
@@ -1098,7 +1273,10 @@ html, body {
 }
 .port h1 span{
     color: #c22020;
+}
 
+.port{
+  text-align: center;
 }
 
 .sky{
