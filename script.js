@@ -1,30 +1,3 @@
-/* cursor start */
-
-const cursor = document.querySelector('.cursor');
-const interactiveElements = document.querySelectorAll('a, button, .card, .car, .cards, h1, h2, h3, h4, h5');
-
-interactiveElements.forEach(element => {
-    element.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(3)';
-    });
-
-    element.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-    });
-});
-
-document.addEventListener('mousemove', (e) => {
-    // Calculate the cursor position relative to the viewport
-    const x = e.clientX;
-    const y = e.clientY;
-
-    // Update the cursor position
-    cursor.style.left = x + 'px';
-    cursor.style.top = y + 'px';
-});
-
-/* cursor end */
-
 /* nav bar start */
 
 document.addEventListener("DOMContentLoaded", function() {
