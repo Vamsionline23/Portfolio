@@ -774,7 +774,7 @@ gap: 40px;
 }
 
 .about img {
-height: auto;
+height: 16/9;
 max-width: 100%;
 }
 
