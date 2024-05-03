@@ -348,10 +348,9 @@ form{
 }
 
 .home-img img {
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: 90%;
     object-fit: contain;
-
 }
 
 /* Share Section Styles */
